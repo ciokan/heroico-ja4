@@ -1,10 +1,5 @@
-import {type Server} from "bun";
+import type {VercelRequest, VercelResponse} from '@vercel/node';
 
-export default {
-	async fetch(request: Request, server: Server) {
-		return new Response(JSON.stringify(request.headers.toJSON()), {
-			status : 200,
-			headers: {"Content-Type": "application/json"},
-		});
-	}
-};
+export default function (request: VercelRequest, response: VercelResponse) {
+	response.json(request.headers);
+}

@@ -2,14 +2,14 @@
 	"name": "@heroico/ja4",
 	"module": "index.ts",
 	"type": "module",
-	"scripts": {
-		"build": "bun-vercel ./index.ts"
-	},
+	"scripts": {},
 	"devDependencies": {
-		"@types/bun": "latest",
-		"bun-vercel": "^1.0.0-alpha.5"
+		"@types/bun": "latest"
 	},
 	"peerDependencies": {
 		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@vercel/node": "^5.0.2"
 	}
 }
