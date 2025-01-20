@@ -4,11 +4,10 @@ export const config = {
 
 export default async function handler(req: Request) {
 	return new Response(
-		JSON.stringify(req.headers.toJSON()),
-		{
+		JSON.stringify(req.headers.toJSON()), {
 			status : 200,
 			headers: {
-				'content-type': 'text/json',
+				'Content-Type': 'application/json',
 			},
 		}
 	);
