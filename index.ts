@@ -1,14 +1,10 @@
-export const config = {
-	runtime: 'edge',
-};
+import {type Server} from "bun";
 
-export default async function handler(req: Request) {
-	return new Response(
-		JSON.stringify(req.headers.toJSON()), {
+export default {
+	async fetch(request: Request, server: Server) {
+		return new Response(JSON.stringify(request.headers.toJSON()), {
 			status : 200,
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		}
-	);
-}
+			headers: {"Content-Type": "application/json"},
+		});
+	}
+};
