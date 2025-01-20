@@ -4,7 +4,9 @@ export const config = {
 
 export default async function handler(req: Request) {
 	return new Response(
-		JSON.stringify(req.headers.toJSON()),
+		JSON.stringify({
+			message: 'Hello, world!',
+		}),
 		{
 			status : 200,
 			headers: {
